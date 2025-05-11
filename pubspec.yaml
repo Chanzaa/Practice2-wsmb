@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
   webview_flutter: ^4.11.0
+  delightful_toast: ^1.1.0
 
 
 dev_dependencies:

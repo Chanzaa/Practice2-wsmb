@@ -1,3 +1,6 @@
+import 'package:delightful_toast/delight_toast.dart';
+import 'package:delightful_toast/toast/components/toast_card.dart';
+import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -80,8 +83,44 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 30),
 
             SizedBox(height: 30),
+
+            //Basic Toast bar
+
+            // ElevatedButton(
+            //   onPressed: () {
+            //     ScaffoldMessenger.of(context).showSnackBar(
+            //       SnackBar(
+            //         content: Text("your Data has been submitted"),
+            //         duration: Durations.extralong3,
+            //       ),
+            //     );
+            //
+            //     print(nameEditingController.text);
+            //     print(emailEditingController.text);
+            //     print(icEditingController.text);
+            //     print(emailEditingController.text);
+            //     print(schoolEditingController.text);
+            //     print(addressEditingController.text);
+            //     print(_image?.path ?? 'No image selected');
+            //   },
+            //   child: Text("basic toast"),
+            // ),
+
+            // Delight toast
             ElevatedButton(
               onPressed: () {
+                DelightToastBar(
+                  position: DelightSnackbarPosition.top,
+                  autoDismiss: true,
+                  snackbarDuration: Durations.extralong4,
+                  builder: (context) {
+                    return ToastCard(
+                      title: Text("Your data has been submitted"),
+                      leading: Icon(Icons.notifications),
+                    );
+                  },
+                ).show(context);
+
                 print(nameEditingController.text);
                 print(emailEditingController.text);
                 print(icEditingController.text);
